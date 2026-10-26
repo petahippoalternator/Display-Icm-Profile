@@ -1,0 +1,29 @@
+name: "Pigeon"
+run-name: "TRELLIS"
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  id-token: write
+  pages: write
+  contents: read
+jobs:
+  GLIDER:
+    runs-on: ubuntu-22.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.ZINNIA.outputs.page_url }}
+    steps:
+      - name: "Yucca"
+        uses: actions/checkout@v5
+      - name: "rosemary"
+        uses: actions/configure-pages@v6
+      - name: "cascade"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ github.workspace }}
+      - name: "VOYAGE"
+        id: ZINNIA
+        uses: actions/deploy-pages@v5
